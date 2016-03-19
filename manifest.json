@@ -1,0 +1,24 @@
+{
+  "name": "Yelp-Uber",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description" : "Uber price, way to your restaurant",
+  // "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
+  "omnibox": { "keyword" : "Yelp, Uber, Yelp-Uber integration, Yelp chrome extension , Uber Chrome extension" },
+  "browser_action": {
+   // "default_icon": { "19": "icons/19x19.png", "38": "icons/38x38.png" },
+    "default_title": "Connect Yelp with Uber"
+
+  },
+   "web_accessible_resources": ["download.png","images.png","uber.png","main.css","bootstrap.min.css"],
+  "permissions": [
+    "activeTab","storage","tabs","http://*/*",  "https://*/*"
+  ],
+  "content_scripts": [{
+    "matches": ["http://www.yelp.com/*", "https://www.yelp.com/*"],
+    "css":["main.css"],
+    "js": ["jquery-2.0.0.min.js","bootstrap.min.js","content.js"]
+
+
+  }]
+}
